@@ -1,4 +1,4 @@
-[![webp-converter Logo](https://github.com/scionoftech/webp-converter/blob/Development/images/nlogo.gif)](https://www.npmjs.com/package/webp-converter)
+[![webp-converter Logo](images/nlogo.gif)](https://www.npmjs.com/package/webp-converter)
 
 [webp-converter v2.0.2](https://www.npmjs.com/package/webp-converter)
 

@@ -1,6 +1,7 @@
 var exec = require('child_process').execFile;//get child_process module
 var enwebp=require('./cwebp.js');//get cwebp module(converts other image format to webp)
 var dewebp=require('./dwebp.js');//get dwebp module(converts webp format to other image)
+var gif2webp=require('./gif2webp.js');//get dwebp module(converts webp format to other image)
 
 //now convert image to .webp format 
 module.exports.cwebp =function(input_image,output_image,quality,callback)
@@ -43,4 +44,26 @@ var query=input_image +' -o '+ output_image;//command to convert image
   			callback('converted successfully');//return success message
  		}
  });
+};
+
+
+module.exports.gif2webp =function(input_image,output_image,callback)
+{
+
+	var sou=input_image;//input image(.jpeg, .pnp ....)
+	var des=output_image;//output image .webp
+
+
+	var query=input_image +' -o '+ output_image;//command to convert image
+
+//enwebp() return which platform webp library should be used for conversion
+	exec(gif2webp(),query.split(/\s+/), function (error, stdout, stderr) //execute command
+	{
+		if(error){
+
+			callback(error);//return error
+		}else {
+			callback('converted successfully');//return success message
+		}
+	});
 };
